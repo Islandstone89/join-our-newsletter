@@ -1,0 +1,132 @@
+
+/* CSS RESET */
+
+html {
+	overflow-y: scroll;
+}
+
+@supports (scrollbar-gutter: stable) {
+	html {
+		overflow-y: auto;
+		scrollbar-gutter: stable;
+	}
+}
+
+*, 
+*::before, 
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+}
+
+img, 
+picture
+ {
+  display: block;
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+a {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+:where(ul, ol) {
+  list-style-type: "";
+  padding: 0;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition {
+    navigation: auto;
+  }
+    
+  html {
+    interpolate-size: allow-keywords;
+    &:focus-within {
+      scroll-behavior: smooth;
+    }
+  }
+}
+
+/* Custom Properties */
+
+:root {
+  --bg-color: hsl(210, 40%, 98%);
+  --btn-bg-color: hsl(226, 76%, 40%);
+  --btn-color: hsl(0, 0%, 100%);
+  --text-color: hsl(0, 0%, 20%);
+}
+
+/* General Styles */
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+.container {
+  outline: 1px solid red;
+  width: min(100% - 2rem, 75rem);
+  margin-inline: auto;
+  padding-block: 20px;
+}
+
+.logo {
+  margin-inline: auto;
+}
+
+.subscribe-btn {
+  border: transparent;
+  background-color: var(--btn-bg-color);
+  color: var(--btn-color);
+  border-radius: 10px;
+  padding: 6px 12px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: .9;
+  }
+}
+
