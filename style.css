@@ -95,6 +95,7 @@ textarea:not([rows]) {
   --btn-bg-color: hsl(226, 76%, 40%);
   --btn-color: hsl(0, 0%, 100%);
   --text-color: hsl(0, 0%, 20%);
+  --form-bg-color: hsl(0, 0%, 100%);
 }
 
 /* General Styles */
@@ -107,22 +108,68 @@ body {
 }
 
 .container {
-  outline: 1px solid red;
   width: min(100% - 2rem, 75rem);
   margin-inline: auto;
   padding-block: 20px;
+}
+
+.main {
+  display: grid;
+  gap: 60px;
+  justify-content: center;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tagline {
+  max-width: 65ch;
 }
 
 .logo {
   margin-inline: auto;
 }
 
+.form-wrapper {
+  padding-inline: 40px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: var(--form-bg-color);
+  padding: 20px;
+  border-radius: 32px;
+}
+
+.label {
+  display: block;
+  margin-block-end: 10px;
+}
+
+.emailInput {
+  border-radius: 10px;
+  padding: 6px 12px;
+  background-color: var(--bg-color);
+  display: inline-block;
+  width: 100%;
+
+  &::placeholder {
+    text-align: center;
+  }
+}
+
 .subscribe-btn {
+  display: inline-block;
   border: transparent;
   background-color: var(--btn-bg-color);
   color: var(--btn-color);
   border-radius: 10px;
-  padding: 6px 12px;
+  padding: 12px;
   cursor: pointer;
 
   &:hover {
@@ -130,3 +177,6 @@ body {
   }
 }
 
+.author-info {
+  margin-block-start: 30px;
+}
